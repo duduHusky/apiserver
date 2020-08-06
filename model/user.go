@@ -1,6 +1,6 @@
 package model
 
-import "github.com/yufenghui/apiserver/pkg/auth"
+import "plover.com/spider/pkg/auth"
 
 // User represents a registered user.
 type UserModel struct {

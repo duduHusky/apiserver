@@ -4,33 +4,20 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/lexkong/log"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
 
 type Database struct {
-	Self   *gorm.DB
-	Docker *gorm.DB
+	Self *gorm.DB
 }
 
 var DB *Database
 
 func (db *Database) Init() {
 	DB = &Database{
-		Self:   GetSelfDB(),
-		Docker: GetDockerDB(),
+		Self: GetSelfDB(),
 	}
-}
-
-func GetDockerDB() *gorm.DB {
-	return InitDockerDB()
-}
-
-func InitDockerDB() *gorm.DB {
-	return openDB(viper.GetString("docker_db.username"),
-		viper.GetString("docker_db.password"),
-		viper.GetString("docker_db.addr"),
-		viper.GetString("docker_db.name"))
 }
 
 func GetSelfDB() *gorm.DB {
@@ -75,5 +62,4 @@ func setupDB(db *gorm.DB) {
 
 func (db *Database) Close() {
 	DB.Self.Close()
-	DB.Docker.Close()
 }

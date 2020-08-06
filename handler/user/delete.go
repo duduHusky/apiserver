@@ -2,9 +2,9 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	. "github.com/yufenghui/apiserver/handler"
-	"github.com/yufenghui/apiserver/model"
-	"github.com/yufenghui/apiserver/pkg/errno"
+	. "plover.com/spider/handler"
+	"plover.com/spider/model"
+	"plover.com/spider/pkg/errno"
 	"strconv"
 )
 

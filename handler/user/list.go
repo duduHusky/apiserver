@@ -2,8 +2,8 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	. "github.com/yufenghui/apiserver/handler"
-	"github.com/yufenghui/apiserver/model"
+	. "plover.com/spider/handler"
+	"plover.com/spider/model"
 )
 
 // @Summary List the users in the database
