@@ -42,7 +42,7 @@ func openDB(username, password, addr, name string) *gorm.DB {
 
 	db, err := gorm.Open("mysql", config)
 	if err != nil {
-		log.Errorf(err, "Database connection failed. Database name: %s", name)
+		log.Errorf("Database connection failed. Database name: %s", name)
 	}
 
 	// set for db connection
